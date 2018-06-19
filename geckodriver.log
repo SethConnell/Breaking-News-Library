@@ -1,0 +1,121 @@
+1529367475408	geckodriver	INFO	geckodriver 0.20.0
+1529367475422	geckodriver	INFO	Listening on 127.0.0.1:56775
+1529367476425	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.V4NaNRWXoVcv"
+*** You are running in headless mode.
+1529367477502	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:17:58.804 plugin-container[12606:590798] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x873f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529367479440	Marionette	INFO	Listening on port 56786
+1529367479588	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:17:59.970 plugin-container[12607:590878] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x853f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529367498347	geckodriver::marionette	ERROR	Failed to stop browser process
+1529367635518	geckodriver	INFO	geckodriver 0.20.0
+1529367635526	geckodriver	INFO	Listening on 127.0.0.1:57675
+1529367636540	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.HsB1Bl2JTflT"
+*** You are running in headless mode.
+1529367637190	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:20:38.250 plugin-container[12613:592222] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x843f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529367638762	Marionette	INFO	Listening on port 57686
+1529367638812	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:20:39.228 plugin-container[12614:592291] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x773f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529367670350	geckodriver::marionette	ERROR	Failed to stop browser process
+1529367781522	geckodriver	INFO	geckodriver 0.20.0
+1529367781529	geckodriver	INFO	Listening on 127.0.0.1:58558
+1529367782536	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.KNBFOdB619dB"
+*** You are running in headless mode.
+1529367783348	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:23:04.480 plugin-container[12622:593558] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529367784996	Marionette	INFO	Listening on port 58569
+1529367785046	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:23:05.498 plugin-container[12623:593640] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x783f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://googleads.g.doubleclick.net/dbm/ad?dbm_c=AKAmf-C-eII6MV4L_ZVHX3f-b6ABARY9KT7aKtJytZwicQwTcJlkKtyrGRli-tM1rdzVCuwhxCBm&dbm_d=AKAmf-D7dD5-yHba5wPsNg0z5mWVnOUW4trpZJRXncNfdG9_uFwcKp9cYTGjVdbnVt2GZXFmkNmHuT9kFpeK--ypgYL9czQaQutyedXRSjQN6Qs60bx5AN4oi_H4c0i-2H1YRQvjp9t2_2HEYzr4RwOLatVgj5WXI2QoNpBHXUeZBjP2A9Asbf7Q6Ivn4E0v62Me04StEDqVuxRoXtch5jfnxE8W6KeVGgA3mVSgaSi4UfI5HRebreylVt8EGura8D2cfCnoXZpJUFJkO8JO1Cj-xDQBUL2NptmyJzVTgkc3slhs0cTrlOmiioJSX2Y8hpRaufFa3jxqVBsAbW-mHG2l18eVzyblLxGYg8YtTA_Ps2KoPGwxwYLqA7pOnq_ZpMED79MUucXH5fkMNAHtjG6cu97H-M7Pp_h1dO_vtPgEJgBhkkjqZ573C-pIT6MYQsUYKje0DxEE1qEzjgpFXxFfR2H2QBOMTIdhFRzhPmf_T_0peKoWQ4A0BYABnp8W_vf5nm5k5TOqpReXrNwd5l533QN5sQuSjaUM4tMrrPWVjMw84D9xvHCgyN5a81TPxXmMpSAz1ZboJvPsWgxlKKg3dAm6RLMSQVZTcch7i1FGmYputw29pcWrEDRgtifDNmniEZNnHk70IUzV-taBm27KiP1wIZhzvHVoKyYwBmDKiqPri_PCEkW-Nudlt-ixWYWp7mhe5kld1JTdUg89bz1zN38RHCyevJu2kbCJ1B6J7UZJLuhpfmE0L0NaMfgcosfYO0i8tptOOVY1khY6jc4da4fgojdYL053IFTXaJh8sEfXVBgVfN1iuhFzAm3855_1nEWqk5dTU27AUgIwuS3DC8yTcBg-94qRORQCPvf1yCI4UpmLrXG_J_Rx4cI6lv2Ko_b2oGaWaHLatliBjzVZ28nHZV0r0sJAYF8i-zTTKgsH1P3RUzWYP-u_HXmgXyzKByScBL_rk5a8rj4LEmJy3TzxwtDnSDblK9ca3LvVUTP66UkyQZ9WBeC60LDpyrOQNXOlwLxno0Mtt98YvDtajjrSEmINLuEobbAYmMNnTq3-5AltjuxRbEeKA-CqJS6xKH7Cd8xk5wm21q3NogkVmhLmM92Zf-79gHzZKjVEfwapCtkVtq_ZmAep82Ir6TpC0xyeK1OdWozeNgm45_mSFaQ8Segxk5_ORZU0MvFJZN_q2tkbpN98-2aHea8zStM2DduE-5enIQK7mWJRtWmhjO29NOJgwIzwNUk8HPXCFcWMZWmG6N40WGoFwTT54Q5_qQm4UTg5z79nxL0HHproYxXrFvLa74cvM-tr226osTmlQce7uWcvc81wFpC85Nckrl8RwTjPBnhYTi6XV2sV3ZKYsGSiPSi56bEd4CiEryM7iLFx0YkCzmX_pxZJWfteqrDd34IkI-KNEDT8_LcOpOA8K_5TYL-C8YVAvzazoK3ZI7dYx-ugVHv1eR7KcP79Mg_3rfk5PfWaPB4vcoexWcUXL-juuDBAcDdI9Beszwqk-ptit-Na4J7hDAGvdezRiE-G7ZcNkvQGetDdyO6e-0_OfjdzaRqIQHivFhUuId_RL3-lWt89yNz4QuswyAJ88sZ65OSC6XT2oRJFFgkERrWxrrnQi8x3Nz5OPDIdw1Gf9QBXrBagGII8NwB5Q_zZ-cGdqMh_JNGdpLmVHcXH6pexJpz71yZ1QtgYyFdAyTXnqK0peUYd0R7UCKhKUlXZetub0S5mmzQQC8jdjgO69NgdORysFwmrpVuEwWSqm4rCT7pmd5QteJYZl1KsxHaXigogArkRGXyhEokSndtE0TGirGl_l_pOfTv8GUQ4anQbw9xmvTU2LxSiYTCOjLphttIjfCczLyZkubmyiULMTcbvJntaV-tcfFgx_QMGPHmBUNNA8ujD8l58YzmkDJnLiX19VJrybk983LRCerMHGemaFTYrLbWW507jB31EtJCLuH1pv3CPTmrVByUW-r2FRrjO6N3_EZtvjeTaame4Ya7hq6WgCc8XX0iszEZ87mIFOguENP94q94ufuMaDin_C3oCaM2BlNj5QM3Tgf-BhXJ5UC46wVaKwRvXFe1eJFOIY1N7qiI33IVUpFcFD9diJRIuCmGkuHlSCzBPc0x9_hKI6I5UN69ynFbcKD8I_oUDQOjDtCWsWwZrNvGe8PDB_pbMOu0RUZ1eyxLFm3TxEXhx9znM7zy1ZdtlPiulj2y3QHAfvkO6St4naJ2PRcTaCVJVfLtKFCayzLJvjPLIzJrTvq00LnkmlAB5YejWogVe4WbPdNFsRtnQbOFwSovVefqA3WM7XvXcm1OAIrSnhW7z8Uk4rw&cid=CAASEuRoWDnXtNtPSYXJL9-H158hDQ&rfl=1%2Chttp%253A%252F%252Finsider.foxnews.com%252F%240, line 3: ReferenceError: require is not defined
+1529367820074	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529367820480	geckodriver::marionette	ERROR	Failed to stop browser process
+1529367967083	geckodriver	INFO	geckodriver 0.20.0
+1529367967091	geckodriver	INFO	Listening on 127.0.0.1:59638
+1529367968106	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.hHB4AcUbwjiL"
+*** You are running in headless mode.
+1529367968848	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:26:09.902 plugin-container[12632:595270] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529367970288	Marionette	INFO	Listening on port 59649
+1529367970376	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:26:10.880 plugin-container[12633:595348] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x823f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529367999728	geckodriver::marionette	ERROR	Failed to stop browser process
+1529368025538	geckodriver	INFO	geckodriver 0.20.0
+1529368025550	geckodriver	INFO	Listening on 127.0.0.1:60236
+1529368026552	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.02cbqccpnD2c"
+*** You are running in headless mode.
+1529368027300	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:27:08.312 plugin-container[12641:596032] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368028730	Marionette	INFO	Listening on port 60247
+1529368028848	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:27:09.265 plugin-container[12642:596104] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x713f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529368058175	geckodriver::marionette	ERROR	Failed to stop browser process
+1529368084858	geckodriver	INFO	geckodriver 0.20.0
+1529368084865	geckodriver	INFO	Listening on 127.0.0.1:60794
+1529368085886	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.YT112RART9rj"
+*** You are running in headless mode.
+1529368086540	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:28:07.549 plugin-container[12653:596898] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x873f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368087964	Marionette	INFO	Listening on port 60801
+1529368088078	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:28:08.485 plugin-container[12654:596979] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7c03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://tpc.googlesyndication.com/sodar/6uQTKQJz.html, line 29: NS_ERROR_NOT_INITIALIZED: 
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529368124950	geckodriver::marionette	ERROR	Failed to stop browser process
+1529368255494	geckodriver	INFO	geckodriver 0.20.0
+1529368255502	geckodriver	INFO	Listening on 127.0.0.1:61804
+1529368256518	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.PvIdR59wZ9sH"
+*** You are running in headless mode.
+1529368257146	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:30:58.145 plugin-container[12669:598527] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368258580	Marionette	INFO	Listening on port 61815
+1529368258594	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:30:59.148 plugin-container[12670:598602] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://googleads.g.doubleclick.net/dbm/ad?dbm_c=AKAmf-BFxPZBiWd3LfDr6GH2FEtS12gDrMl2Bgim3tyVuS8s5h7kVGLV59Kli0juMIsoG7QLfLEq&dbm_d=AKAmf-Aw0b0UA6rkYcACltqR64W8QP_gao0q_IjNiWaejyRj6-eLjhWPd4ucPSa0R5KWoqSQbMRyv6fscTkJxwJF_NCPXlGGnlnPuS4wk9-OWC1QNhaViTaGt9kE7Xh86viyd7CArSUHxg8VHquLqaX2NiXXLfeyTJ8fSuTMph2i5-EW8IboOGhkLOVh-pLI2kX7t-eDtju2VzJS1Gr6auiCk0iv2toX4oAimBLcErjSmGNyyT7PBGbc_kNrc5rqTbbdmHo59QR-DFGQtyDGeBavk7B7BSYN5beV4woom7KP1ep_KURfSbjFZGISosEnXnKlXfMYxv0XlA_KzOhNlpVFJk4guXHmi60Uvxq_FirIwwUD9sO9q5DyP4Rd9cBbxYhqZ5ZEL01t0cF_M2CFiFJIFl6gTv8jmfnWhhzqb6Y7uEKbeqsi5JNu0e6NBfed8NxKnDp81fkBwD_PoYyrCE4rxOM1CXvfp6G0oPrmJDVeU3hXRj61r1jfjgbkhnxiYUPgRG-bRI6DWbJJd8Xd52srwGTxYctDfmNjyYvYoefvh2y0m7A0kTfDL-dDFfNF2kci2SuXaIc-QmVZ6wScIaaVfENEEh_sOK1pQWqNgCDtn2GqEsTvnYb7DpaZNZ4w80kJZs6Kh0LpJYLG7DgMbVFk4n2NAJiBhpAfjyDZpcajy--dvj0gfILWcXJxBRFA4GKvzJP77TkrYhrxGsZ2xur-_vhZm_--xZORWX8_ThxUymljuTtXOkVHCKAte9ZoyntIwXiusFiugiqptn9Rv-bA_t9_fdz44uCAarlazJT5t5mFR9WOPepYIr2Nqfi_6wTEgrws1YuGYQL0-iDw_YEZ4uOXAwkl6iw-qpybBVXEibZfJItzmAieKpuLhmIAX9rjlekUqG7thvi2Ug-QjrKVUvuhWOzXk3NhIwbdrpuCBbpOsL9cOmXdSSdkbI_Emy5uIdwtfF_3j3zDa3YqSJunqLICyAOud1OX5t5Jtovc89hMkNS8PDtWqh-jYmZ7xOaGakPGWxEdV9oWoiJorfHyXSnF7-3wR259Llh2CT2PRK6aYa4IQWgGsNXGWmXmfz0TvHM_bqCnpgQ2BF8Q8DaFWuC2T2WuH09D13Pl7seSA5el_O8o4hOa0ZyGTV5qykFA1iDBDKajdcYGQdvwY6EZ6sEjUoAZrAo5FhFKAq3sknOzaKZSg8nqFKzjP-6sd-8gy2INc2bz5wyBBsYj-86rcVBcxSW-2w0fq0bdwQXbVDvzLaqRZqInpW12jA6j8H9rH1cKnd8pQqSxl6x6HZGs68zRMpWXEr_wI-bI98oPTcQz6CGVOIgkETXtOZS_3wvfLC_tx7Jncuw6N6uFg_mOnqr5cnUjNWUTsdejECE-sIvvtDXJ_IaLT2LYqYu05X1OFHrZmb7-4dnI8mNHYF8hr2HZfcHFCwgRxMV97RvQzIhhUfP5qLnIzd5NSgoSQDBQShc3nhmIIGUGVLJSdiBZt4v1lgLFlCAR1AEqSacICaOl3hVIU5SYUY1hQENUle12Jmqp1XzJI6EK1I1HlLWPzRnC4i-eg9BXt5zTyXrBobxs9Zhsrkq5Wg9jL9IJYnxHvbUOmlFTfBr1dkwvJ9ga3_XB2LhXCP5xoR3A2s_c9HewwfMXtpOL57DOV9tXAWZ6GwHJf4Ym60oD7dCBRMz_MKFuXYXdmNCN014MsJzUxuK0x5liHpEwDnfwYuMI-a52K2SqPyQSXLhPtXJunwRtcQBb9C55vdYf41Gn6AW8y1jYH_awO_um0KT7nUmCGV7COXe1Hp97__Fs5ghVUIDQSgxB0DZMf56FI7zJnRLdidPxFR-YiK-PvVpu6aPP7JVSBfnWp9W2dtpuSU7p48aakb2fHtp3jnKX-9N_aC5pStt0pzlFgFqu48DsljTan-UKUm1zsld6Ii1HDQND-KvrNaTs-YjaPjPdoDyv0CRUPgtOzdGKXOWKBXKzRaBYExQmmsaEGj3d3_arH0PwL79DINqnXFNFguDOwB3_kftIJiweIk4-z0hUGXRrU9G8rKep0SNSAxwJLzI1tE0F573B_aDoBfwtRU-PT6YhVmk7XE6lSsff43L0a9ypQE56QgI5tcdK8Zj8xdeM_jMBf0CaHNETP01yAd-ltmnQdw34zBG8q0YRfDbga5R3Y2HI4lWITpMyNIooPyt-1q-ROKPK_wOdyP_5OiXIV_8GU4cLkYIP4eJ8sGQm0LbxybeQMq7J7CedrofcMisJnKPip92KbSRkc-ji5k1zvvw-0Uh-KJzAeJX1w4t4lPegtBMuQH6bg13hLysaN1qhmVfvFp-rkKX4etxQXiiFKgY2tKL4vy9DIffDccI&cid=CAASEuRohFGM9PW3wU5v93OSB0y1Pg&rfl=1%2Chttp%253A%252F%252Finsider.foxnews.com%252F%240, line 3: ReferenceError: require is not defined
+1529368421049	geckodriver::marionette	ERROR	Failed to stop browser process
+1529368453811	geckodriver	INFO	geckodriver 0.20.0
+1529368453818	geckodriver	INFO	Listening on 127.0.0.1:62902
+1529368454832	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.s6KKcdKNBK7y"
+*** You are running in headless mode.
+1529368455568	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:34:16.633 plugin-container[12682:600221] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x743f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368457058	Marionette	INFO	Listening on port 62913
+1529368457118	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:34:17.595 plugin-container[12683:600303] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x773f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368487966	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529368488373	geckodriver::marionette	ERROR	Failed to stop browser process
+1529368700407	geckodriver	INFO	geckodriver 0.20.0
+1529368700416	geckodriver	INFO	Listening on 127.0.0.1:64202
+1529368701430	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.HddktrlI02YI"
+*** You are running in headless mode.
+1529368702246	Marionette	INFO	Enabled via --marionette
+2018-06-18 19:38:23.459 plugin-container[12737:603876] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529368703920	Marionette	INFO	Listening on port 64209
+1529368703944	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 19:38:24.653 plugin-container[12738:603947] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x823f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1529368731451	geckodriver::marionette	ERROR	Failed to stop browser process

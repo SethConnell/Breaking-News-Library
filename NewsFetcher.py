@@ -120,6 +120,7 @@ def CT():
 #This function takes the front stories from Fox News Insider.
 def InsiderFoxNews():
     global stories
+    global var
     fox = "http://insider.foxnews.com/"
     options = Options()
     options.set_headless(headless=True)
@@ -127,6 +128,31 @@ def InsiderFoxNews():
     driver.get(fox)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
-    page = soup.find_all("div", class_="new front-story")
-    print page
+    var = soup
+    for i in var.find_all("h2")[0:40]:
+	headline = i.find("a").text
+	url = i.find("a", href=True)["href"]
+	shares = facebookShares(url)
+        d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+        stories.append(d)
     driver.quit()
+
+#This function scrapes TheHill.com.
+def TheHill():
+    global stories
+    hill = "http://thehill.com/"
+    r = requests.get(hill)
+    data = r.text
+    soup = BeautifulSoup(data,"lxml")
+    for story in soup.find_all("h2"):
+        headline = story.find("a").text
+        url = "http://thehill.com" + story.find("a", href=True)["href"]
+        shares = facebookShares(url)
+        d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+        stories.append(d)
+        
+InsiderFoxNews()
