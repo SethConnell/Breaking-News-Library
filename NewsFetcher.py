@@ -17,6 +17,7 @@ from selenium.webdriver.firefox.options import Options
 def facebookShares(url):
     try:
         counts = socialshares.fetch(url, ['facebook'])
+        return int(counts['facebook']['share_count'])
     except KeyError:
         time.sleep(15)
         counts = socialshares.fetch(url, ['facebook'])
@@ -273,5 +274,19 @@ def JudicialWatch():
             print headline
             print url
             print ""
-            time.sleep(.1)
+            time.sleep(.3)
         
+# This function gets news from the daily caller.
+def DailyCaller():
+    global stories
+    link = "http://dailycaller.com/"
+    r = requests.get(link)
+    data = r.text
+    soup = BeautifulSoup(data, "lxml")
+    soup = soup.find("div", "articles trending")
+    for story in soup.find_all("a", href=True):
+        headline = story.find("h4").text
+        url = "http://dailycaller.com" + story["href"]
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
