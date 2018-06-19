@@ -213,3 +213,22 @@ def FreeBeacon():
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
 
+# This function finds stories from dennismichaellynch.com
+def dennis():
+    global stories
+    link = "http://dennismichaellynch.com/"
+    user_agent = \
+        'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+    headers = {'User-Agent': user_agent}
+    request = urllib.request.Request(link, None, headers)  # The assembled request
+    response = urllib.request.urlopen(request)
+    data = response.read()
+    soup = BeautifulSoup(data, 'lxml')
+    print soup
+    soup = soup.find("div", class_="trending-stories")
+    for story in soup.find_all("article", class_="latestPost excerpt grid-2"):
+        headline = story.find("a")["title"]
+        url  = story.find("a", href=True)["href"]
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
