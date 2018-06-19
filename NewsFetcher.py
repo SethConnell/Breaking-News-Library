@@ -43,3 +43,21 @@ def scrapeFoxNews():
                  "shares" : shares}
             stories.append(d)
 
+# A function that scrapes the Daily Wire.
+def scrapeDailyWire():
+    global stories
+    dailywire = "https://www.dailywire.com/"
+    page = urllib.urlopen(dailywire)
+    r = requests.get(dailywire)
+    data = r.text
+    soup = BeautifulSoup(data, "lxml")
+    for h3 in soup.find_all("article", class_="article-teaser f-deflate-1-s fx ai-c mb-3-s mb-4-ns"):
+         blah = h3.find('a', text=True)
+         headline = blah.text
+         url = "https://www.dailywire.com" + blah['href']
+         shares = facebookShares(url)
+         print ""
+         d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+         stories.append(d)
