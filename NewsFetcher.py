@@ -61,3 +61,24 @@ def scrapeDailyWire():
              "url" : url,
              "shares" : shares}
          stories.append(d)
+
+# A function that scrapes The Gateway Pundit.
+def scrapeTheGatewayPundit():
+    global stories
+    thegatewaypundit = "https://www.thegatewaypundit.com/"
+    user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+    headers={'User-Agent':user_agent,} 
+    request=urllib.request.Request(thegatewaypundit,None,headers) #The assembled request
+    response = urllib.request.urlopen(request)
+    data = response.read()
+    soup = BeautifulSoup(data, "lxml")
+    for h3 in soup.find_all("h3", class_="post-title"):
+        blah = h3.find("a", text=True)
+        headline = blah.text
+        url = blah['href']
+        shares = facebookShares(url)
+        d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+        stories.append(d)
+
