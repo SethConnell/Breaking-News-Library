@@ -82,3 +82,22 @@ def scrapeTheGatewayPundit():
              "shares" : shares}
         stories.append(d)
 
+#This function scrapes WND's political frontpage only.
+def scrapeWND(): 
+    global stories
+    wnd = "http://www.wnd.com/category/front-page/politics/"
+    user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+    headers={'User-Agent':user_agent,} 
+    request=urllib.request.Request(wnd,None,headers) #The assembled request
+    response = urllib.request.urlopen(request)
+    data = response.read()
+    soup = BeautifulSoup(data, "lxml")
+    for i in soup.find_all("a", class_="cat-feature", href=True):
+        headline = i.find("h1", class_="posttitle").text
+        url = i['href']
+        shares = facebookShares(url)
+        d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+        stories.append(d)
+
