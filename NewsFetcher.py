@@ -182,3 +182,19 @@ def ijr():
         stories.append(d)
     driver.quit()
 
+# This function scrapes Breitbart's website.
+def Breitbart():
+    global soup
+    global stories
+    breitbart = 'http://www.breitbart.com/'
+    r = requests.get(breitbart)
+    data = r.text
+    soup = BeautifulSoup(data, 'lxml')
+    soup = soup.find("ul", id="BBTrendUL")
+    for story in soup.find_all('li'):
+        headline = story.find('a').text
+        url = story.find("a", href=True)["href"]
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
+
