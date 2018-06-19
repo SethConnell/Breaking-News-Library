@@ -101,3 +101,19 @@ def scrapeWND():
              "shares" : shares}
         stories.append(d)
 
+#This function scrapes all stories from Conservative Tribune.
+def CT():
+    global stories
+    ct = "https://www.westernjournal.com/ct/"
+    r  = requests.get(ct)
+    data = r.text
+    soup = BeautifulSoup(data,"lxml")
+    for article in soup.find_all("article", class_="post"):
+        headline = article.find("h3", class_="entry-title").text
+        url = article.find("a", attrs={"data-type" : "Internal link"},href=True)['href']
+        shares = facebookShares(url)
+        d = {"headline" : headline,
+             "url" : url,
+             "shares" : shares}
+        stories.append(d)
+
