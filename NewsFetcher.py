@@ -198,3 +198,18 @@ def Breitbart():
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
 
+# This function scrapes FreeBeacon.com
+def FreeBeacon():
+    global stories
+    fb = 'http://freebeacon.com/'
+    r = requests.get(fb)
+    data = r.text
+    soup = BeautifulSoup(data, 'lxml')
+    soup = soup.find("div", class_="show-for-large-up")
+    for story in soup.find_all("article",class_="post"):
+        headline = story.find("a", {"rel":"bookmark"})['title']
+        url = story.find("a", href=True)["href"]
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
+
