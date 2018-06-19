@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Made some imports I'll need later on.
+import time
 import socialshares
 import requests
 import ast
@@ -14,8 +15,12 @@ from selenium.webdriver.firefox.options import Options
 
 # A simple function to get number of shares on Facebook of a url using social shares module.
 def facebookShares(url):
-    counts = socialshares.fetch(url, ['facebook'])
-    return int(counts['facebook']['share_count'])
+    try:
+        counts = socialshares.fetch(url, ['facebook'])
+    except KeyError:
+        time.sleep(15)
+        counts = socialshares.fetch(url, ['facebook'])
+        return int(counts['facebook']['share_count'])
 
 
 stories = []
@@ -248,5 +253,25 @@ def WesternJournal():
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
 
-WesternJournal()
-displayStories()
+# This function gets news from JudicialWatch.com
+def JudicialWatch():
+    global stories
+    link = "http://www.judicialwatch.org/"
+    r = requests.get(link)
+    data = r.text
+    soup = BeautifulSoup(data, "lxml")
+    soup = soup.find("ul", id="tslinks")
+    for story in soup.find_all("li"):
+        headline = story.find("a").text
+        url = story.find("a", href=True)["href"]
+        if url[0:8] != "https://":
+            print "not a valid url"
+        else:
+            shares = facebookShares(url)
+            d = {'headline': headline, 'url': url, 'shares': shares}
+            stories.append(d)
+            print headline
+            print url
+            print ""
+            time.sleep(.1)
+        
