@@ -196,3 +196,38 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
 1529371255992	geckodriver::marionette	ERROR	Failed to stop browser process
+1529377656579	geckodriver	INFO	geckodriver 0.20.0
+1529377656588	geckodriver	INFO	Listening on 127.0.0.1:53631
+1529377657608	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.6kFf8M0C3G7m"
+*** You are running in headless mode.
+1529377658436	Marionette	INFO	Enabled via --marionette
+2018-06-18 22:07:39.589 plugin-container[13344:686570] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529377660242	Marionette	INFO	Listening on port 53642
+1529377660372	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 22:07:40.781 plugin-container[13345:686655] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7443, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://central.washingtonexaminer.com/scripts/signup.js, line 1: TypeError: $ is not a function
+1529377717403	geckodriver	INFO	geckodriver 0.20.0
+1529377717412	geckodriver	INFO	Listening on 127.0.0.1:54051
+1529377718437	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.Y6J5JQN2jxDb"
+*** You are running in headless mode.
+1529377719270	Marionette	INFO	Enabled via --marionette
+2018-06-18 22:08:41.020 plugin-container[13352:687233] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8243, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-06-18 22:08:41.535 plugin-container[13353:687339] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8007, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529377722380	Marionette	INFO	Listening on port 54058
+1529377722492	Marionette	WARN	TLS certificate errors will be ignored for this session
+1529377853099	geckodriver	INFO	geckodriver 0.20.0
+1529377853108	geckodriver	INFO	Listening on 127.0.0.1:54980
+1529377854133	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-profile" "/var/folders/24/43sdwrg509z6q0cc7dx_v4j00000gn/T/rust_mozprofile.5BWo5PiPhS76"
+*** You are running in headless mode.
+1529377855072	Marionette	INFO	Enabled via --marionette
+2018-06-18 22:10:56.529 plugin-container[13361:688727] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7c43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1529377857588	Marionette	INFO	Listening on port 54993
+1529377857614	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-06-18 22:10:57.729 plugin-container[13362:688801] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://central.washingtonexaminer.com/scripts/signup.js, line 1: TypeError: $ is not a function

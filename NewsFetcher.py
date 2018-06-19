@@ -290,3 +290,17 @@ def DailyCaller():
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
+
+# This function searches Weasel Zippers for stories.
+def WeaselZippers():
+    global stories
+    link = "https://www.weaselzippers.us/"
+    r = requests.get(link)
+    data = r.text
+    soup = BeautifulSoup(data, "lxml")
+    for story in soup.find_all("div","post")[0:10]:
+        headline = story.find("a").text
+        url = story.find("a",href=True)['href']
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
