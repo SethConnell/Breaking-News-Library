@@ -117,3 +117,16 @@ def CT():
              "shares" : shares}
         stories.append(d)
 
+#This function takes the front stories from Fox News Insider.
+def InsiderFoxNews():
+    global stories
+    fox = "http://insider.foxnews.com/"
+    options = Options()
+    options.set_headless(headless=True)
+    driver = webdriver.Firefox(firefox_options=options, executable_path=r'/usr/local/bin/geckodriver')
+    driver.get(fox)
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'lxml')
+    page = soup.find_all("div", class_="new front-story")
+    print page
+    driver.quit()
