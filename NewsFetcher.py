@@ -214,7 +214,7 @@ def FreeBeacon():
         stories.append(d)
 
 # This function finds stories from dennismichaellynch.com
-def dennis():
+def Dennis():
     global stories
     link = "http://dennismichaellynch.com/"
     user_agent = \
@@ -232,3 +232,21 @@ def dennis():
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
+
+# This function extracts stories from Western Journal.
+def WesternJournal():
+    global stories
+    link = "https://www.westernjournal.com/"
+    r = requests.get(link)
+    data = r.text
+    soup = BeautifulSoup(data, "lxml")
+    soup = soup.find("div", id="fhe-section-0")
+    for story in soup.find_all("div", class_="fhe-headline"):
+        headline = story.find("a").text
+        url = story.find("a", href=True)["href"]
+        shares = facebookShares(url)
+        d = {'headline': headline, 'url': url, 'shares': shares}
+        stories.append(d)
+
+WesternJournal()
+displayStories()
