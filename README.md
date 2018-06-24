@@ -1,8 +1,8 @@
 # :statue_of_liberty: BREAKING NEWS 1.1 - A Political News Python Library :statue_of_liberty:
 
-A Python 2.7 library of custom-made functions that gather breaking news from some of the top political websites in the world. News stories (the headlines and urls) and the number of times the story was shared on Facebook are saved to a list.
+A Python 2.7 library of custom-made functions that gather breaking news from some of the top political websites on the web. News stories (headlines and urls) and the number of times the story was shared on Facebook are saved to a list.
 
-This library is perfect newsletters and story-finding for your blog.
+This library is perfect for building newsletters and story-finding for your blog.
 
 ### Featured Websites:
  * [Conservative Tribune](https://www.conservativetribune.com)
@@ -15,10 +15,14 @@ This library is perfect newsletters and story-finding for your blog.
  * [Judicial Watch](http://www.judicialwatch.org/)
  * [Daily Caller](http://dailycaller.com/)
  * [Weasel Zippers](https://www.weaselzippers.us/)
+ * [The Gateway Pundit](https://www.thegatewaypundit.com/)
+ * [WND](http://www.wnd.com/category/front-page/politics/)
+ * [Daily Wire](https://www.dailywire.com/)
+ * [Fox News](http://www.foxnews.com)
  * [Fox News Insider](http://www.insider.foxnews.com/)
 
 ### Required Python Libraries:
-* [facepy 1.0.9](https://pypi.org/project/facepy/)
+* [Facepy 1.0.9](https://pypi.org/project/facepy/)
 * [Requests 2.19.1](https://pypi.org/project/requests/)
 * [AST 0.0.2](https://pypi.org/project/AST/)
 * [Beautifulsoup-4 4.6.0](https://pypi.org/project/beautifulsoup4/)
