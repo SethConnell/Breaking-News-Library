@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 # Made some imports I'll need later on.
+import os
 import time
-import socialshares
+import facepy
 import requests
 import ast
 import unicodedata
@@ -12,16 +13,16 @@ from six.moves import urllib
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
+# Setting global variables for Facebook share function.
+token = os.environ.get('facebook_token')
+graph = facepy.GraphAPI(token, version=2.9)
 
 # A simple function to get number of shares on Facebook of a url using social shares module.
 def facebookShares(url):
-    try:
-        counts = socialshares.fetch(url, ['facebook'])
-        return int(counts['facebook']['share_count'])
-    except KeyError:
-        time.sleep(15)
-        counts = socialshares.fetch(url, ['facebook'])
-        return int(counts['facebook']['share_count'])
+    global token
+    global graph
+    response = graph.get('?og_object&share_count&id=' + str(link) + '&fields=og_object,engagement&access_token=' + str(token))
+    return response["engagement"]["share_count"]
 
 
 stories = []
@@ -304,3 +305,10 @@ def WeaselZippers():
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
+
+def getshares(linklist):
+    length = len(linklist)
+    if length < 100:
+        for i in range(0,length):
+            
+            time.sleep(20)
