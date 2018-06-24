@@ -40,7 +40,8 @@ def displayStories():
 
 # A clean function that scrapes Fox News.com
 def scrapeFoxNews():
-    global stories
+    global foxnewslist
+    foxnewslist = []
     foxnews = 'http://www.foxnews.com/'
     r = requests.get(foxnews)
     data = r.text
@@ -54,12 +55,13 @@ def scrapeFoxNews():
             url = htmlatag.get('href')
             shares = facebookShares(url)
             d = {'headline': headline, 'url': url, 'shares': shares}
-            stories.append(d)
+            foxnewslist.append(d)
 
 
 # A function that scrapes the Daily Wire.
 def scrapeDailyWire():
-    global stories
+    global dailywirelist
+    dailywirelist = []
     dailywire = 'https://www.dailywire.com/'
     page = urllib.urlopen(dailywire)
     r = requests.get(dailywire)
@@ -74,12 +76,13 @@ def scrapeDailyWire():
         shares = facebookShares(url)
         print ''
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        dailywirelist.append(d)
 
 
 # A function that scrapes The Gateway Pundit.
 def scrapeTheGatewayPundit():
-    global stories
+    global gatewaypudnitlist
+    gatewaypudnitlist = []
     thegatewaypundit = 'https://www.thegatewaypundit.com/'
     user_agent = \
         'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -94,12 +97,13 @@ def scrapeTheGatewayPundit():
         url = blah['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        gatewaypunditlist.append(d)
 
 
 # This function scrapes WND's political frontpage only.
 def scrapeWND():
-    global stories
+    global wndlist
+    wndlist = []
     wnd = 'http://www.wnd.com/category/front-page/politics/'
     user_agent = \
         'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -113,12 +117,13 @@ def scrapeWND():
         url = i['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        wndlist.append(d)
 
 
 # This function scrapes all stories from Conservative Tribune.
 def CT():
-    global stories
+    global ctlist
+    ctlist = []
     ct = 'https://www.westernjournal.com/ct/'
     r = requests.get(ct)
     data = r.text
@@ -129,12 +134,13 @@ def CT():
                            href=True)['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        ctlist.append(d)
 
 
 # This function takes the front stories from Fox News Insider.
 def InsiderFoxNews():
-    global stories
+    global insiderfoxlist
+    insiderfoxlist = []
     fox = 'http://insider.foxnews.com/'
     options = Options()
     options.set_headless(headless=True)
@@ -149,13 +155,14 @@ def InsiderFoxNews():
         url = i.find('a', href=True)['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        insiderfoxlist.append(d)
     driver.quit()
 
 
 # This function scrapes TheHill.com.
 def TheHill():
-    global stories
+    global thehilllist
+    thehilllist = []
     hill = 'http://thehill.com/'
     r = requests.get(hill)
     data = r.text
@@ -165,12 +172,13 @@ def TheHill():
         url = 'http://thehill.com' + story.find('a', href=True)['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        thehilllist.append(d)
 
 #This function scrapes IJ Review.
 def ijr():
-    global stories
     global soup
+    global ijrlist
+    ijrlist = []
     ijr = 'https://ijr.com/'
     options = Options()
     options.set_headless(headless=True)
@@ -186,13 +194,14 @@ def ijr():
         url = "https://ijr.com" + story['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        ijrlist.append(d)
     driver.quit()
 
 # This function scrapes Breitbart's website.
 def Breitbart():
     global soup
-    global stories
+    global breitbartlist
+    breitbartlist = []
     breitbart = 'http://www.breitbart.com/'
     r = requests.get(breitbart)
     data = r.text
@@ -203,11 +212,12 @@ def Breitbart():
         url = story.find("a", href=True)["href"]
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        breitbartlist.append(d)
 
 # This function scrapes FreeBeacon.com
 def FreeBeacon():
-    global stories
+    global freebeacon
+    freebeacon = []
     fb = 'http://freebeacon.com/'
     r = requests.get(fb)
     data = r.text
@@ -218,11 +228,12 @@ def FreeBeacon():
         url = story.find("a", href=True)["href"]
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        freebeacon.append(d)
 
 # This function finds stories from dennismichaellynch.com
 def Dennis():
-    global stories
+    global dennislist
+    dennislist = []
     link = "http://dennismichaellynch.com/"
     user_agent = \
         'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -238,11 +249,12 @@ def Dennis():
         url  = story.find("a", href=True)["href"]
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        dennislist.append(d)
 
 # This function extracts stories from Western Journal.
 def WesternJournal():
-    global stories
+    global westernjournallist
+    westernjournallist = []
     link = "https://www.westernjournal.com/"
     r = requests.get(link)
     data = r.text
@@ -253,11 +265,12 @@ def WesternJournal():
         url = story.find("a", href=True)["href"]
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        westernjournallist.append(d)
 
 # This function gets news from JudicialWatch.com
 def JudicialWatch():
-    global stories
+    global judicialwatchlist
+    judicialwatchlist = []
     link = "http://www.judicialwatch.org/"
     r = requests.get(link)
     data = r.text
@@ -271,15 +284,13 @@ def JudicialWatch():
         else:
             shares = facebookShares(url)
             d = {'headline': headline, 'url': url, 'shares': shares}
-            stories.append(d)
-            print headline
-            print url
-            print ""
+            judicialwatchlist.append(d)
             time.sleep(.3)
         
 # This function gets news from the daily caller.
 def DailyCaller():
-    global stories
+    global dailycallerlist
+    dailycallerlist = []
     link = "http://dailycaller.com/"
     r = requests.get(link)
     data = r.text
@@ -290,11 +301,12 @@ def DailyCaller():
         url = "http://dailycaller.com" + story["href"]
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        dailycallerlist.append(d)
 
 # This function searches Weasel Zippers for stories.
 def WeaselZippers():
-    global stories
+    global weaselzipperslist
+    weaselzipperslist = []
     link = "https://www.weaselzippers.us/"
     r = requests.get(link)
     data = r.text
@@ -304,7 +316,7 @@ def WeaselZippers():
         url = story.find("a",href=True)['href']
         shares = facebookShares(url)
         d = {'headline': headline, 'url': url, 'shares': shares}
-        stories.append(d)
+        weaselzipperslist.append(d)
 
 # This function gets as many share-counts from Facebook's API as it safely can.
 def getshares(linklist):
