@@ -305,9 +305,10 @@ def WeaselZippers():
 
 # This function gets as many share-counts from Facebook's API as it safely can.
 def getshares(linklist):
+    global stories
     for i in range(0,85):
         shares = facebookShares(linklist[i]['url'])
-        stores[i]["shares"] = str(shares)
+        stories[i]["shares"] = str(shares)
         time.sleep(22)
 
 # The 'scrapingfunctions' list contains all functions that search for news stories.
