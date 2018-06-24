@@ -8,6 +8,7 @@ import facepy
 import requests
 import ast
 import unicodedata
+from TaskThreaderModule import *
 from bs4 import BeautifulSoup
 from six.moves import urllib
 from selenium import webdriver
@@ -24,7 +25,7 @@ def facebookShares(url):
     response = graph.get('?og_object&share_count&id=' + str(link) + '&fields=og_object,engagement&access_token=' + str(token))
     return response["engagement"]["share_count"]
 
-
+# The 'stories' list will store all news stories once scraping is complete.
 stories = []
 
 
@@ -53,8 +54,7 @@ def scrapeFoxNews():
             htmlatag = data.find('h2', class_='title').find('a')
             headline = htmlatag.getText()
             url = htmlatag.get('href')
-            shares = facebookShares(url)
-            d = {'headline': headline, 'url': url, 'shares': shares}
+            d = {'headline': headline, 'url': url}
             foxnewslist.append(d)
 
 
@@ -73,9 +73,7 @@ def scrapeDailyWire():
         blah = h3.find('a', text=True)
         headline = blah.text
         url = 'https://www.dailywire.com' + blah['href']
-        shares = facebookShares(url)
-        print ''
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         dailywirelist.append(d)
 
 
@@ -95,8 +93,7 @@ def scrapeTheGatewayPundit():
         blah = h3.find('a', text=True)
         headline = blah.text
         url = blah['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         gatewaypunditlist.append(d)
 
 
@@ -115,8 +112,7 @@ def scrapeWND():
     for i in soup.find_all('a', class_='cat-feature', href=True):
         headline = i.find('h1', class_='posttitle').text
         url = i['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         wndlist.append(d)
 
 
@@ -132,8 +128,7 @@ def CT():
         headline = article.find('h3', class_='entry-title').text
         url = article.find('a', attrs={'data-type': 'Internal link'},
                            href=True)['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         ctlist.append(d)
 
 
@@ -153,8 +148,7 @@ def InsiderFoxNews():
     for i in var.find_all('h2')[0:40]:
         headline = i.find('a').text
         url = i.find('a', href=True)['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         insiderfoxlist.append(d)
     driver.quit()
 
@@ -170,8 +164,7 @@ def TheHill():
     for story in soup.find_all('h2'):
         headline = story.find('a').text
         url = 'http://thehill.com' + story.find('a', href=True)['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         thehilllist.append(d)
 
 #This function scrapes IJ Review.
@@ -192,8 +185,7 @@ def ijr():
     for story in soup.find_all('a', attrs={'rel': 'post'}, href=True):
         headline = story.text
         url = "https://ijr.com" + story['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         ijrlist.append(d)
     driver.quit()
 
@@ -210,8 +202,7 @@ def Breitbart():
     for story in soup.find_all('li'):
         headline = story.find('a').text
         url = story.find("a", href=True)["href"]
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         breitbartlist.append(d)
 
 # This function scrapes FreeBeacon.com
@@ -226,8 +217,7 @@ def FreeBeacon():
     for story in soup.find_all("article",class_="post"):
         headline = story.find("a", {"rel":"bookmark"})['title']
         url = story.find("a", href=True)["href"]
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         freebeacon.append(d)
 
 # This function finds stories from dennismichaellynch.com
@@ -247,8 +237,7 @@ def Dennis():
     for story in soup.find_all("article", class_="latestPost excerpt grid-2"):
         headline = story.find("a")["title"]
         url  = story.find("a", href=True)["href"]
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         dennislist.append(d)
 
 # This function extracts stories from Western Journal.
@@ -263,8 +252,7 @@ def WesternJournal():
     for story in soup.find_all("div", class_="fhe-headline"):
         headline = story.find("a").text
         url = story.find("a", href=True)["href"]
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         westernjournallist.append(d)
 
 # This function gets news from JudicialWatch.com
@@ -282,8 +270,7 @@ def JudicialWatch():
         if url[0:8] != "https://":
             print "not a valid url"
         else:
-            shares = facebookShares(url)
-            d = {'headline': headline, 'url': url, 'shares': shares}
+            d = {'headline': headline, 'url': url}
             judicialwatchlist.append(d)
             time.sleep(.3)
         
@@ -299,8 +286,7 @@ def DailyCaller():
     for story in soup.find_all("a", href=True):
         headline = story.find("h4").text
         url = "http://dailycaller.com" + story["href"]
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         dailycallerlist.append(d)
 
 # This function searches Weasel Zippers for stories.
@@ -314,8 +300,7 @@ def WeaselZippers():
     for story in soup.find_all("div","post")[0:10]:
         headline = story.find("a").text
         url = story.find("a",href=True)['href']
-        shares = facebookShares(url)
-        d = {'headline': headline, 'url': url, 'shares': shares}
+        d = {'headline': headline, 'url': url}
         weaselzipperslist.append(d)
 
 # This function gets as many share-counts from Facebook's API as it safely can.
@@ -324,3 +309,6 @@ def getshares(linklist):
         shares = facebookShares(linklist[i]['url'])
         stores[i]["shares"] = str(shares)
         time.sleep(22)
+
+# The 'scrapingfunctions' list contains all functions that search for news stories.
+scrapingfunctions = [scrapeFoxNews, scrapeDailyWire, scrapeTheGatewayPundit, scrapeWND, CT, InsiderFoxNews, TheHill, ijr, Breitbart, FreeBeacon, Dennis, WesternJournal, JudicialWatch, DailyCaller, WeaselZippers]
