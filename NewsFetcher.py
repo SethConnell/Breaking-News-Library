@@ -306,9 +306,9 @@ def WeaselZippers():
         d = {'headline': headline, 'url': url, 'shares': shares}
         stories.append(d)
 
+# This function gets as many share-counts from Facebook's API as it safely can.
 def getshares(linklist):
-    length = len(linklist)
-    if length < 100:
-        for i in range(0,length):
-            
-            time.sleep(20)
+    for i in range(0,85):
+        shares = facebookShares(linklist[i]['url'])
+        stores[i]["shares"] = str(shares)
+        time.sleep(22)
