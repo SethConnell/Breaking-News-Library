@@ -10,24 +10,22 @@ def runTasks(data):
     else:
         return False
 
-    
-def loop(data):
+# Loops through data list, runs functions, then starts "finished()" when complete.
+def loop(data, finished):
     try:
         r = range(0, len(data))
         for x in r:
-            print "Initializing process " + str(x)
+            # Initializes processes.
             locals()['loop%s' % x] = Thread(target=data[x])
-        print "Initializing finished."
 
         for x in r:
-            print "Running process " + str(x)
+            # Starts processes.
             locals()['loop%s' % x].start()
 
-        print "Preparing to wait for functions." 
+        # Waits for functions to complete. 
         for x in r:
             locals()['loop%s' % x].join()
 
-        print "Success!!"
-        return True
+        finished()
     except:
         PrintException()
