@@ -28,6 +28,7 @@ This library is perfect for building newsletters and story-finding for your blog
 * [Beautifulsoup-4 4.6.0](https://pypi.org/project/beautifulsoup4/)
 * [Six 1.11.0](https://pypi.org/project/six/)
 * [Selenium 3.12.0](https://pypi.org/project/selenium/)
+* [Task Threader Module](https://github.com/SethConnell/Task-Threader-Module) (included)
 
 ### Notes About Web Drivers:
 * Be sure to have [Gecko Driver v0.21.0](https://github.com/mozilla/geckodriver/releases) installed on your computer.
