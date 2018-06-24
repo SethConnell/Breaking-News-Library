@@ -311,5 +311,18 @@ def getshares(linklist):
         stories[i]["shares"] = str(shares)
         time.sleep(22)
 
+# This function appends all scraped data to the global stories list.
+def connectNewsLists():
+    global stories
+    data = [foxnewslist, dailywirelist, gatewaypunditlist, wndlist, ctlist, insiderfoxlist, thehilllist, ijrlist, breitbartlist, freebeaconlist, westernjournallist, judicialwatchlist, dailycallerlist, weaselzipperslist]
+    length = len(data)
+    for site in range(0, length):
+        length2 = len(data[site])
+        for i in range(0,length2):
+            stories.append(data[site][i])
+    print "finished!"
+            
+
 # The 'scrapingfunctions' list contains all functions that search for news stories.
 scrapingfunctions = [scrapeFoxNews, scrapeDailyWire, scrapeTheGatewayPundit, scrapeWND, CT, InsiderFoxNews, TheHill, ijr, Breitbart, FreeBeacon, Dennis, WesternJournal, JudicialWatch, DailyCaller, WeaselZippers]
+
