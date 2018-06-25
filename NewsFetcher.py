@@ -14,6 +14,7 @@ from six.moves import urllib
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
+
 # Setting global variables for Facebook share function.
 token = os.environ.get('facebook_token')
 graph = facepy.GraphAPI(token, version=2.9)
@@ -63,9 +64,8 @@ def scrapeDailyWire():
     global dailywirelist
     dailywirelist = []
     dailywire = 'https://www.dailywire.com/'
-    page = urllib.urlopen(dailywire)
-    r = requests.get(dailywire)
-    data = r.text
+    result = urllib.request.urlopen(dailywire)
+    data = response.read()
     soup = BeautifulSoup(data, 'lxml')
     for h3 in soup.find_all('article',
                             class_='article-teaser f-deflate-1-s fx ai-c mb-3-s mb-4-ns'
@@ -79,8 +79,8 @@ def scrapeDailyWire():
 
 # A function that scrapes The Gateway Pundit.
 def scrapeTheGatewayPundit():
-    global gatewaypudnitlist
-    gatewaypudnitlist = []
+    global gatewaypunditlist
+    gatewaypunditlist = []
     thegatewaypundit = 'https://www.thegatewaypundit.com/'
     user_agent = \
         'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
@@ -145,7 +145,7 @@ def InsiderFoxNews():
     driver.get(fox)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
-    for i in var.find_all('h2')[0:40]:
+    for i in soup.find_all('h2')[0:40]:
         headline = i.find('a').text
         url = i.find('a', href=True)['href']
         d = {'headline': headline, 'url': url}
@@ -207,8 +207,8 @@ def Breitbart():
 
 # This function scrapes FreeBeacon.com
 def FreeBeacon():
-    global freebeacon
-    freebeacon = []
+    global freebeaconlist
+    freebeaconlist = []
     fb = 'http://freebeacon.com/'
     r = requests.get(fb)
     data = r.text
@@ -218,7 +218,7 @@ def FreeBeacon():
         headline = story.find("a", {"rel":"bookmark"})['title']
         url = story.find("a", href=True)["href"]
         d = {'headline': headline, 'url': url}
-        freebeacon.append(d)
+        freebeaconlist.append(d)
 
 # This function finds stories from dennismichaellynch.com
 def Dennis():
@@ -232,7 +232,6 @@ def Dennis():
     response = urllib.request.urlopen(request)
     data = response.read()
     soup = BeautifulSoup(data, 'lxml')
-    print soup
     soup = soup.find("div", class_="trending-stories")
     for story in soup.find_all("article", class_="latestPost excerpt grid-2"):
         headline = story.find("a")["title"]
@@ -321,8 +320,28 @@ def connectNewsLists():
         for i in range(0,length2):
             stories.append(data[site][i])
     print "finished!"
-            
-
+                
 # The 'scrapingfunctions' list contains all functions that search for news stories.
 scrapingfunctions = [scrapeFoxNews, scrapeDailyWire, scrapeTheGatewayPundit, scrapeWND, CT, InsiderFoxNews, TheHill, ijr, Breitbart, FreeBeacon, Dennis, WesternJournal, JudicialWatch, DailyCaller, WeaselZippers]
 
+# This function prints all items from the global 'stories' list.
+def printStories():
+    global stories
+    for story in stories:
+        print story["headline"]
+        print story["url"]
+        print ""
+    print "Complete!"
+
+# This functions runs the storyfinding processes.
+def start():
+    global scrapingfunctions
+    print "Starting Processes"
+    runTasks(scrapingfunctions)
+    print "Complete!"
+    time.sleep(2)
+    connectNewsLists()
+    print "Printing Results:"
+    printStories()
+
+    
