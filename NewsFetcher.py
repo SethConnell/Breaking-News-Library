@@ -34,6 +34,7 @@ stories = []
 def displayStories():
     global stories
     for i in range(0, len(stories)):
+        print
         print stories[i]['headline']
         print stories[i]['url']
         print stories[i]['shares']
@@ -42,6 +43,7 @@ def displayStories():
 
 # A clean function that scrapes Fox News.com
 def scrapeFoxNews():
+    source = "Fox News"
     global foxnewslist
     foxnewslist = []
     foxnews = 'http://www.foxnews.com/'
@@ -55,12 +57,13 @@ def scrapeFoxNews():
             htmlatag = data.find('h2', class_='title').find('a')
             headline = htmlatag.getText()
             url = htmlatag.get('href')
-            d = {'headline': headline, 'url': url}
+            d = {"source": source, 'headline': headline, 'url': url}
             foxnewslist.append(d)
 
 
 # A function that scrapes the Daily Wire.
 def scrapeDailyWire():
+    source = "Daily Wire"
     global dailywirelist
     dailywirelist = []
     dailywire = 'https://www.dailywire.com/'
@@ -73,12 +76,13 @@ def scrapeDailyWire():
         blah = h3.find('a', text=True)
         headline = blah.text
         url = 'https://www.dailywire.com' + blah['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         dailywirelist.append(d)
 
 
 # A function that scrapes The Gateway Pundit.
 def scrapeTheGatewayPundit():
+    source = "Gateway Pundit"
     global gatewaypunditlist
     gatewaypunditlist = []
     thegatewaypundit = 'https://www.thegatewaypundit.com/'
@@ -93,12 +97,13 @@ def scrapeTheGatewayPundit():
         blah = h3.find('a', text=True)
         headline = blah.text
         url = blah['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         gatewaypunditlist.append(d)
 
 
 # This function scrapes WND's political frontpage only.
 def scrapeWND():
+    source = "WND"
     global wndlist
     wndlist = []
     wnd = 'http://www.wnd.com/category/front-page/politics/'
@@ -112,12 +117,13 @@ def scrapeWND():
     for i in soup.find_all('a', class_='cat-feature', href=True):
         headline = i.find('h1', class_='posttitle').text
         url = i['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         wndlist.append(d)
 
 
 # This function scrapes all stories from Conservative Tribune.
 def CT():
+    source = "Conservative Tribune"
     global ctlist
     ctlist = []
     ct = 'https://www.westernjournal.com/ct/'
@@ -128,12 +134,13 @@ def CT():
         headline = article.find('h3', class_='entry-title').text
         url = article.find('a', attrs={'data-type': 'Internal link'},
                            href=True)['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         ctlist.append(d)
 
 
 # This function takes the front stories from Fox News Insider.
 def InsiderFoxNews():
+    source = "Fox News Insider"
     global insiderfoxlist
     insiderfoxlist = []
     fox = 'http://insider.foxnews.com/'
@@ -148,13 +155,14 @@ def InsiderFoxNews():
     for i in soup.find_all('h2')[0:40]:
         headline = i.find('a').text
         url = i.find('a', href=True)['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         insiderfoxlist.append(d)
     driver.quit()
 
 
 # This function scrapes TheHill.com.
 def TheHill():
+    source = "The Hill"
     global thehilllist
     thehilllist = []
     hill = 'http://thehill.com/'
@@ -164,11 +172,12 @@ def TheHill():
     for story in soup.find_all('h2'):
         headline = story.find('a').text
         url = 'http://thehill.com' + story.find('a', href=True)['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         thehilllist.append(d)
 
 #This function scrapes IJ Review.
 def ijr():
+    source = "IJ Review"
     global soup
     global ijrlist
     ijrlist = []
@@ -185,12 +194,13 @@ def ijr():
     for story in soup.find_all('a', attrs={'rel': 'post'}, href=True):
         headline = story.text
         url = "https://ijr.com" + story['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         ijrlist.append(d)
     driver.quit()
 
 # This function scrapes Breitbart's website.
 def Breitbart():
+    source = "Breitbart"
     global soup
     global breitbartlist
     breitbartlist = []
@@ -202,11 +212,12 @@ def Breitbart():
     for story in soup.find_all('li'):
         headline = story.find('a').text
         url = story.find("a", href=True)["href"]
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         breitbartlist.append(d)
 
 # This function scrapes FreeBeacon.com
 def FreeBeacon():
+    source = "Free Beacon"
     global freebeaconlist
     freebeaconlist = []
     fb = 'http://freebeacon.com/'
@@ -217,11 +228,12 @@ def FreeBeacon():
     for story in soup.find_all("article",class_="post"):
         headline = story.find("a", {"rel":"bookmark"})['title']
         url = story.find("a", href=True)["href"]
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         freebeaconlist.append(d)
 
 # This function finds stories from dennismichaellynch.com
 def Dennis():
+    source = "Dennis Michael Lynch"
     global dennislist
     dennislist = []
     link = "http://dennismichaellynch.com/"
@@ -236,11 +248,12 @@ def Dennis():
     for story in soup.find_all("article", class_="latestPost excerpt grid-2"):
         headline = story.find("a")["title"]
         url  = story.find("a", href=True)["href"]
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         dennislist.append(d)
 
 # This function extracts stories from Western Journal.
 def WesternJournal():
+    source = "Western Journal"
     global westernjournallist
     westernjournallist = []
     link = "https://www.westernjournal.com/"
@@ -251,11 +264,12 @@ def WesternJournal():
     for story in soup.find_all("div", class_="fhe-headline"):
         headline = story.find("a").text
         url = story.find("a", href=True)["href"]
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         westernjournallist.append(d)
 
 # This function gets news from JudicialWatch.com
 def JudicialWatch():
+    source = "Judicial Watch"
     global judicialwatchlist
     judicialwatchlist = []
     link = "http://www.judicialwatch.org/"
@@ -269,12 +283,13 @@ def JudicialWatch():
         if url[0:8] != "https://":
             print "not a valid url"
         else:
-            d = {'headline': headline, 'url': url}
+            d = {"source": source, 'headline': headline, 'url': url}
             judicialwatchlist.append(d)
             time.sleep(.3)
         
 # This function gets news from the daily caller.
 def DailyCaller():
+    source = "Daily Caller"
     global dailycallerlist
     dailycallerlist = []
     link = "http://dailycaller.com/"
@@ -285,11 +300,12 @@ def DailyCaller():
     for story in soup.find_all("a", href=True):
         headline = story.find("h4").text
         url = "http://dailycaller.com" + story["href"]
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         dailycallerlist.append(d)
 
 # This function searches Weasel Zippers for stories.
 def WeaselZippers():
+    source = "Weasel Zippers"
     global weaselzipperslist
     weaselzipperslist = []
     link = "https://www.weaselzippers.us/"
@@ -299,7 +315,7 @@ def WeaselZippers():
     for story in soup.find_all("div","post")[0:10]:
         headline = story.find("a").text
         url = story.find("a",href=True)['href']
-        d = {'headline': headline, 'url': url}
+        d = {"source": source, 'headline': headline, 'url': url}
         weaselzipperslist.append(d)
 
 # This function gets as many share-counts from Facebook's API as it safely can.
@@ -328,6 +344,7 @@ scrapingfunctions = [scrapeFoxNews, scrapeDailyWire, scrapeTheGatewayPundit, scr
 def printStories():
     global stories
     for story in stories:
+        print story["source"]
         print story["headline"]
         print story["url"]
         print ""
